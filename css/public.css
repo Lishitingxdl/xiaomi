@@ -1,0 +1,7 @@
+*{
+	margin: 0;   /* body是8px; */
+	text-decoration: none;
+	font-style: normal; /*  a标签 */
+	padding: 0;
+	list-style: none;
+}
