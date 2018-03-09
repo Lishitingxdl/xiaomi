@@ -138,20 +138,90 @@
 	margin: 0 auto;
 	position: relative;
 }
-.banner_img{
+/* .banner_img{
 	width: 100%;
 	height: 100%;
-	/* background-color: blue ; */
+	background-color: blue ;
 	position: relative;
 	cursor: pointer;
-}
-.banner_img img{
+} */
+/* .banner_img img{
 	width: 100%;
 	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
 	cursor: pointer;
+} */
+.imgbox{
+	width: 1226px;
+	height: 460px;
+	position: relative;
+}
+.imgbox li{
+	width: 1226px;
+	height: 460px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: all 1s  ease-in-out;
+	opacity: 0;
+}
+.imgbox li.active{
+	z-index: 9;
+	opacity: 1;
+}
+.pagerbox{
+	width: 150px;
+	height: 10px;
+	/* background-color: red; */
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+	z-index: 999;
+}
+.pagerbox li{
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: #fff;
+	float: left;
+	margin: 0 10px;
+	border:2px solid #6b6b6b ;
+	cursor: pointer;
+	transition: all 1s ;
+}
+.pagerbox li.active{
+	background-color: red;
+}
+.pagerbox li:hover{
+	background-color: red;
+}
+.prev,.next{
+	width: 41px;
+	height: 69px;
+	position: absolute;
+	top: 50%;
+	margin-top: -35px;
+	z-index: 9999;
+	background: ;
+	cursor: pointer;
+	opacity: 0.6;
+	background: url('../img/download.png');
+}
+.prev{
+	left: 234px;
+	background-position: -84px 0;
+}
+.next{
+	right: 0;
+	background-position: -124px 0;
+}
+.prev:hover{
+	background-position: 0 0;
+}
+.next:hover{
+	background-position: -42px 0;
 }
 .banner_nav{
 	width: 234px;
@@ -161,6 +231,7 @@
 	top: 0;
 	padding: 20px 0;
 	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 10;
 }
 .banner_nav li{
 	width: 174px;
@@ -252,13 +323,14 @@
 .danpin{
 	width: 1226px;
 	height: 398px;
-	background-color: red;
+	/* background-color: red; */
 	margin: 0 auto;
+	overflow: hidden;
 }
 .danpin_top{
 	width: 1226px;
 	height: 58px;
-	background-color: #F5F5F5;
+	/* background-color: #F5F5F5; */
 }
 .danpin_top h1{
 	font-size: 21px;
@@ -348,6 +420,111 @@
 	color: #ff6700;
 	font-weight: normal;
 	margin-top: 12px;
+}
+#buy{
+	width: 1226px;
+	height: 398px;
+	margin: 0 auto;
+}
+.buy_top{
+	width: 100%;
+	height: 58px;
+	/* background-color: red; */
+}
+.buy_top h1{
+	font-size: 21px;
+	color: #333;
+	line-height: 58px;
+	float: left ;
+	font-weight: 400;
+}
+.buy_arrow{
+	width: 72px;
+	height: 24px;
+	float: right;
+	cursor: pointer;
+	/* background-color: blue; */
+}
+.buy_arrow span{
+	display: block;
+	width: 50%;
+	height: 22px;
+	float: left;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	text-align: center;
+	line-height: 22px;
+	color: #ccc;
+	font-weight: bold;
+	user-select: none;
+}
+.buy_arrow span:hover{
+	color: red;
+}
+.buy_arrow span.disable{
+	color: #333;
+}
+.buy_bottom{
+	width: 100%	;
+	height: 340px;
+	/* background-color: pink; */
+}
+.buy_time{
+	width: 234px;
+	height: 340px;
+	float: left;
+	margin-right: 14px;
+	background-color: #FAFAFA ;
+}
+.buy_list{
+	width: 978px;
+	height: 340px;
+	float: left;
+	overflow: hidden;
+	/* background-color: blue; */
+}
+.buy_inner{
+	width: 3000px;
+	height: 340px;
+	/* background-color: #ccc; */
+	transition: all 1s;
+}
+.buy_item{
+	width: 234px;
+	height: 340px;
+	margin-right: 14px;
+	float: left;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-color: #FAFAFA;
+}
+.buy_item h1{
+	text-align: center;
+	font-size: 14px;
+	color: #212121;
+	font-weight: 400;
+	margin-top: 22px;
+}
+.buy_item h2{
+	text-align: center;
+	font-size: 12px;
+	color: #C3BACC;
+	font-weight: normal;
+	margin-top: 3px;
+}
+.buy_item h3{
+	text-align: center;
+	font-size: 14px;
+	color: #ff6700;
+	font-weight: normal;
+	margin-top: 12px;
+}
+.buy_item img,.buy_time img{
+	width: 160px;
+	height: 166px;
+	margin: 0 auto 22px;
+	padding-top: 39px;
+	display: block;
 }
 .content{
 	width: 100%;
@@ -467,8 +644,12 @@
 	margin: 0 16px;
 	cursor: pointer;
 }
+.type{
+	float: left;
+}
 .dapei_right span:hover{
 	color: #FF6700;
+	border-bottom: 2px solid #FF6700;
 }
 .dapei_item{
 	margin-left: 0;
@@ -544,7 +725,7 @@
 .tuijian{
 	width: 1226px;
 	height: 358px;
-	background-color: blue;
+	/* background-color: blue; */
 	margin: 0 auto ;
 }
 .tuijian_top1{
@@ -613,6 +794,28 @@
 	background-color: #FFFFFF;
 	float: left;
 	padding-top: 45px;
+	position: relative;
+}
+.neirong_btn{
+	width: 296px;
+	height: 30px;
+	/* background-color: red; */
+	position: absolute;
+	bottom: 15px;
+	left: 0px;
+}
+.neirong_btns{
+	width: 296px;
+	height: 30px;
+}
+.neirong_btns li{
+	width: 10px;
+	height: 10px;
+	padding: 10px;
+    margin: 0 2px;
+    display: inline-block;
+    background-color: #ffac13;
+    z-index: 999;
 }
 .neirong_bot1 h1{
 	width: 276px;
