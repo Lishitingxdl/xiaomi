@@ -82,6 +82,42 @@
 	float: left;
 	margin-left: 189px;
 }
+.logbox{
+	width: 100%;
+	height: 229px;
+	background-color: #fff;
+	/* opacity: 0; */
+	display: none;
+	position: absolute;
+	left:0;
+	top: 140px;
+	z-index: 12;
+	overflow: hidden;
+	transition: all 0.5s;
+}
+/* .navbox:hover .logbox{
+	opacity: 1;
+} */
+.logbox li{
+	float: left;
+	width: 180px;
+	height: 229px;
+	margin-left: 40px;
+}
+.logbox img{
+	width: 100px;
+	height: 100px;
+}
+.logbox h1,h2{
+	font-size: 14px;
+	text-align: center;
+	font-weight: normal;
+}
+.logbox h2{
+	font-size: 12px;
+	color: #ff6700;
+	font-weight: normal;
+}
 .nav_wenzi span:hover{
 	color: #ff6700;
 }
@@ -203,7 +239,7 @@
 	position: absolute;
 	top: 50%;
 	margin-top: -35px;
-	z-index: 9999;
+	z-index: 9;
 	background: ;
 	cursor: pointer;
 	opacity: 0.6;
@@ -241,6 +277,42 @@
 	color: #fff;
 	padding: 0 30px;
 	cursor: pointer;
+}
+.banner_nav li:hover{
+	background-color: #ff6700;
+}
+.menu{
+	width: 700px;
+	height: 460px;
+	background: #fff;
+	position: absolute;
+	left: 234px;
+	top: 0;
+	display: none;
+	z-index: 11;
+	border-top: 1px solid #ccc;
+	box-shadow: 0 0px 2px 0px #ccc;
+}
+.menu1{
+	width: 200px;
+	height: 60px;
+	background-color: #fff;
+	margin-top: 10px;
+	margin-bottom: 16px;
+	/* float: left; */
+}
+.menu1 img{
+	width: 58px;
+	height: 58px;
+	margin-left: 10px;
+}
+.menu1 span{
+	font-size: 14px;
+	color: #363636;
+	/* line-height: 20px; */
+	text-align: center;
+	margin-left: 20px;
+	/* margin-bottom: 20px; */
 }
 .banner_btn{
 	width: 41px;
@@ -638,16 +710,18 @@
 }
 .dapei{
 	margin-top: 22px;
+	position: relative;
 }
 .dapei_right span{
 	float: left;
 	margin: 0 16px;
 	cursor: pointer;
 }
-.type{
-	float: left;
-}
 .dapei_right span:hover{
+	color: #FF6700;
+	border-bottom: 2px solid #FF6700;
+}
+.dapei_right span.active{
 	color: #FF6700;
 	border-bottom: 2px solid #FF6700;
 }
@@ -658,6 +732,13 @@
 	width: 100%;
 	height: 614px;
 	background-color: #F5F5F5;
+	position: absolute;
+	top: 58px;
+	left: 0;
+
+}
+.dapei div.active{
+	z-index: 99;
 }
 .dapei_left{
 	width: 234px;
@@ -787,6 +868,23 @@
 	/* background-color: pink; */
 	float: left;
 }
+.neirong_item{
+	width: 296px;
+	height: 286px;
+	overflow: hidden;
+	float: left;
+}
+.neirong_item1{
+	width: 296px;
+	height: 286px;
+	float: left;
+}
+.neirong_inner{
+	width: 888px;
+	height: 286px;
+	/* background-color: #ccc; */
+	/* margin-top: 30px; */
+}
 .neirong_bot1{
 	border-top: 1px solid #FF6700;
 	width: 296px;
@@ -796,6 +894,41 @@
 	padding-top: 45px;
 	position: relative;
 }
+.neirong_prev{
+	width: 20px;
+	height: 48px;
+	background: #757575;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	opacity: 0;
+	cursor: pointer;
+	/* z-index: 99; */
+}
+.neirong_next{
+	width: 20px;
+	height: 48px;
+	background: #757575;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	right: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+.neirong_prev span,.neirong_next span{
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	line-height: 48px;
+	font-weight: normal;
+}
+.neirong_prev:hover,.neirong_next:hover{
+	background-color: #757575;
+	opacity: 0.5 ;
+}
 .neirong_btn{
 	width: 296px;
 	height: 30px;
@@ -804,18 +937,32 @@
 	bottom: 15px;
 	left: 0px;
 }
-.neirong_btns{
-	width: 296px;
+.neirong_btns {
+	margin: 0 auto;
+	width: 80px;
 	height: 30px;
 }
-.neirong_btns li{
-	width: 10px;
-	height: 10px;
-	padding: 10px;
-    margin: 0 2px;
+.pagerer{
+	width: 6px;
+	height: 6px;
+	/* padding: 10px; */
+    margin: 11px 6px;
+    /* padding: 2px 0; */
     display: inline-block;
-    background-color: #ffac13;
-    z-index: 999;
+    background-color: #ccc;
+    border: 2px solid #fff;
+    /* z-index: 9; */
+    border-radius: 50%;
+}
+.pagerer:hover{
+	background-color: #ff6700;
+}
+.pagerer.pagerer_active{
+	width: 6px;
+	height: 6px;
+	background-color: #fff;
+	border: 2px solid #ff6700;
+	display: inline-block;
 }
 .neirong_bot1 h1{
 	width: 276px;
@@ -826,7 +973,7 @@
 	font-size: 16px;
 	text-align: center;
 	line-height: 24px;
-	float: left;	
+	/* float: left;	 */
 }
 .neirong_bot1 h2{
 	width: 296px;
@@ -834,9 +981,9 @@
 	color: #333;
 	text-align: center;
 	font-weight: normal;
-	display: block;
-	float: left;
-	margin: 0 auto;
+	/* display: block; */
+	/* float: left; */
+	/* margin: 0 auto; */
 	font-size: 20px;
 }
 .neirong_bot1 h3{

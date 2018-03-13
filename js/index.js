@@ -94,22 +94,107 @@
 }
 //内容
 {
-	function content1(){
-		const types=document.querySelectorAll(".dapei_right");
-		const danpin_bots=document.querySelectorAll(".danpin_bot");
+	// function content1(){
+		const types=document.querySelectorAll(".dapei_right span");
+		const dapei_bots=document.querySelectorAll(".dapei_bot");
 			types.forEach(function (ele,index){
 				ele.onmouseenter=function(){
-					for (let i=0;i<types.length;i++){
+					for(let i=0;i<types.length;i++){
 						types[i].classList.remove("active");
-						danpin_bot[i].classList.remove("active");
+						dapei_bots[i].classList.remove("active");
 					}
-					this.classList.add("active");
-					danpin_bot[index].classList.add("active");
+					types.classList.add("active");
+					dapei_bots[index].classList.add("active");
 				}
 			})
 	}
-	// const content1list=document.querySelectorAll(".content1");
+	// const content1list=document.querySelectorAll(".dapei");
 	// content1list.forEach(function(ele){
 	// 	content1(ele);
 	// })
+// }
+
+//banner导航
+{
+	let lis=document.querySelectorAll(".banner_nav li");
+	let menus=document.querySelectorAll(".menu");
+	let obj=menus[0];
+	lis.forEach(function(ele,index){
+		ele.onmouseenter=function(){
+			obj.style.display="none";
+			menus[index].style.display="block";
+			obj=menus[index];
+		}
+		ele.onmouseleave=function(){
+			menus[index].style.display="none";
+		}
+	})
+}
+//top开始
+{
+	let logbox=document.querySelector(".logbox");
+	let nav_wenzi=document.querySelector(".nav_wenzi");
+	let navtexts=document.querySelectorAll(".navtext");
+	let navbox=document.querySelector(".navbox"); 
+
+	nav_wenzi.onmouseenter=function(){
+		logbox.style.height="229px";
+		logbox.style.display="block";
+	}
+	navbox.onmouseleave=function(){
+		logbox.style.height="0px";
+		logbox.style.display="none";
+	}
+	}
+		
+    
+
+//内容下部
+{
+	function wheel(parent){
+
+	let prev=parent.querySelector(".neirong_prev");
+	let next=parent.querySelector(".neirong_next");
+	let neirong_inner=parent.querySelector(".neirong_inner");
+	let neirong_item1s=parent.querySelectorAll(".neirong_item1");
+	var pagerers=parent.querySelectorAll(".pagerer");
+	let n=0;
+	// console.log(neirong_prev);
+
+	next.onclick=function(){
+		n++;
+		if(n===neirong_item1s.length){
+			n=neirong_item1s.length-1;
+			return;
+		}
+		neirong_inner.style.marginLeft=n*-296+"px";
+		pagerers[n].classList.add("pagerer_active");
+		pagerers[n-1].classList.remove("pagerer_active");
+
+	};
+	prev.onclick=function(){
+		n--;
+		if(n<0){
+			n=0;
+			return;
+		}
+		neirong_inner.style.marginLeft=n*-296+"px";
+		pagerers[n].classList.add("pagerer_active");
+		pagerers[n+1].classList.remove("pagerer_active");
+	};
+	let obj=pagerers[0];
+	pagerers.forEach(function(ele,index){
+		ele.onclick=function(){
+			this.classList.add("pagerer_active");
+			obj.classList.remove("pagerer_active");
+			obj=this;
+			neirong_inner.style.marginLeft=index*-296+"px";
+			n=index;
+		}
+	})
+	}
+	const wheelList=document.querySelectorAll(".neirong_bot1");
+	wheelList.forEach(function(ele){
+		wheel(ele);
+	})
 }
