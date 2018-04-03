@@ -94,10 +94,16 @@
 	z-index: 12;
 	overflow: hidden;
 	transition: all 0.5s;
+	border-top: 1px solid #ccc;
 }
 /* .navbox:hover .logbox{
 	opacity: 1;
 } */
+.logbox ul{
+	width: 1226px;
+	height: 229px;
+	margin: 0 auto;
+}
 .logbox li{
 	float: left;
 	width: 180px;
@@ -107,6 +113,8 @@
 .logbox img{
 	width: 100px;
 	height: 100px;
+	margin-top: 20px;
+	margin-left: 40px;
 }
 .logbox h1,h2{
 	font-size: 14px;
@@ -699,6 +707,8 @@
 	opacity: 0;
 	color: #fff;
 	text-align: center;
+	font-size: 12px;
+	line-height: 30px;
 }
 .zhineng_item:hover .zhineng_tan{
 	bottom: 0;
@@ -882,8 +892,6 @@
 .neirong_inner{
 	width: 888px;
 	height: 286px;
-	/* background-color: #ccc; */
-	/* margin-top: 30px; */
 }
 .neirong_bot1{
 	border-top: 1px solid #FF6700;
@@ -897,25 +905,27 @@
 .neirong_prev{
 	width: 20px;
 	height: 48px;
-	background: #757575;
+	background: #DFDFDF;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	margin: auto;
-	opacity: 0;
+	/* opacity: 0; */
+	display: none;
 	cursor: pointer;
 	/* z-index: 99; */
 }
 .neirong_next{
 	width: 20px;
 	height: 48px;
-	background: #757575;
+	background: #DFDFDF;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	margin: auto;
 	right: 0;
-	opacity: 0;
+	/* opacity: 0; */
+	display: none;
 	cursor: pointer;
 }
 .neirong_prev span,.neirong_next span{
@@ -923,11 +933,19 @@
 	font-size: 20px;
 	text-align: center;
 	line-height: 48px;
-	font-weight: normal;
+	font-weight: bold;
 }
-.neirong_prev:hover,.neirong_next:hover{
-	background-color: #757575;
-	opacity: 0.5 ;
+.neirong_prev:hover{
+	background: #757575;
+}
+.neirong_next:hover{
+	background: #757575;
+}
+.neirong_bot1:hover .neirong_prev{
+	display: block;
+}
+.neirong_bot1:hover .neirong_next{
+	display: block;
 }
 .neirong_btn{
 	width: 296px;
@@ -981,9 +999,6 @@
 	color: #333;
 	text-align: center;
 	font-weight: normal;
-	/* display: block; */
-	/* float: left; */
-	/* margin: 0 auto; */
 	font-size: 20px;
 }
 .neirong_bot1 h3{
@@ -1131,7 +1146,10 @@
 	font-size: 24px;
 	line-height: 25px;
 }
-.foot_service :hover{
+.weixiu:hover .weixiu1{
+	color: #FF6700;
+}
+.weixiu:hover .weixiu2{
 	color: #FF6700;
 }
 .weixiu2{
@@ -1170,7 +1188,7 @@
 	font-weight: normal;
 	cursor: pointer;
 }
-.left h1:hover{
+.left :hover{
 	color: #FF6700;
 }
 .right{
@@ -1208,7 +1226,10 @@
 	font-size: 12px;
 	line-height: 28px;
 }
-.kefu2:hover,.kefu1:hover{
+.kefu:hover .kefu1{
+	color: white;
+}
+.kefu:hover .kefu2{
 	color: white;
 }
 .kefu:hover{

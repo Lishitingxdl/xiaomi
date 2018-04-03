@@ -20,7 +20,6 @@
 	let n=0;
 	let t=setInterval(move,3000);
 
-
 	// setInterval(function(){    //开启播放、清除播放功能
 	function move(){
 		n++;
@@ -94,7 +93,7 @@
 }
 //内容
 {
-	// function content1(){
+	function content1(parent){
 		const types=document.querySelectorAll(".dapei_right span");
 		const dapei_bots=document.querySelectorAll(".dapei_bot");
 			types.forEach(function (ele,index){
@@ -103,16 +102,16 @@
 						types[i].classList.remove("active");
 						dapei_bots[i].classList.remove("active");
 					}
-					types.classList.add("active");
+					this.classList.add("active");
 					dapei_bots[index].classList.add("active");
 				}
 			})
 	}
-	// const content1list=document.querySelectorAll(".dapei");
-	// content1list.forEach(function(ele){
-	// 	content1(ele);
-	// })
-// }
+	const content1s=document.querySelectorAll(".dapei");
+	content1s.forEach(function(ele){
+		content1(ele);
+	})
+}
 
 //banner导航
 {
@@ -135,7 +134,8 @@
 	let logbox=document.querySelector(".logbox");
 	let nav_wenzi=document.querySelector(".nav_wenzi");
 	let navtexts=document.querySelectorAll(".navtext");
-	let navbox=document.querySelector(".navbox"); 
+	let navbox=document.querySelector(".navbox");
+	let lists=document.querySelector(".logbox ul"); 
 
 	nav_wenzi.onmouseenter=function(){
 		logbox.style.height="229px";
@@ -145,10 +145,17 @@
 		logbox.style.height="0px";
 		logbox.style.display="none";
 	}
+	// let obj=lists[0];
+	// navtexts.forEach(function(ele,index){
+	// 	ele.onmouseenter=function(){
+	// 		obj.style.display="none";
+	// 		lists[index].style.display="block";
+	// 		obj=lists[index];
+	// 	}
+	// })
 	}
 		
     
-
 //内容下部
 {
 	function wheel(parent){
@@ -159,8 +166,8 @@
 	let neirong_item1s=parent.querySelectorAll(".neirong_item1");
 	var pagerers=parent.querySelectorAll(".pagerer");
 	let n=0;
+	let obj=pagerers[0];
 	// console.log(neirong_prev);
-
 	next.onclick=function(){
 		n++;
 		if(n===neirong_item1s.length){
@@ -170,7 +177,7 @@
 		neirong_inner.style.marginLeft=n*-296+"px";
 		pagerers[n].classList.add("pagerer_active");
 		pagerers[n-1].classList.remove("pagerer_active");
-
+		obj=pagerers[n];
 	};
 	prev.onclick=function(){
 		n--;
@@ -182,12 +189,15 @@
 		pagerers[n].classList.add("pagerer_active");
 		pagerers[n+1].classList.remove("pagerer_active");
 	};
-	let obj=pagerers[0];
+	// let obj=pagerers[0];
 	pagerers.forEach(function(ele,index){
 		ele.onclick=function(){
+			for(let i=0;i<neirong_item1s.length;i++){
+				pagerers[i].classList.remove("pagerer_active");
+			}
 			this.classList.add("pagerer_active");
-			obj.classList.remove("pagerer_active");
-			obj=this;
+			// obj.classList.remove("pagerer_active");
+			// obj=this;
 			neirong_inner.style.marginLeft=index*-296+"px";
 			n=index;
 		}
